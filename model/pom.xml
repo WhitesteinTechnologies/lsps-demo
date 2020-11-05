@@ -2,8 +2,8 @@
 <project>
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.whitestein.lsps.default-app</groupId>
-		<artifactId>lsps-app</artifactId>
+		<groupId>com.whitestein.lsps.app</groupId>
+		<artifactId>lsps-app-parent</artifactId>
 		<version>0.1-SNAPSHOT</version>
 	</parent>
 

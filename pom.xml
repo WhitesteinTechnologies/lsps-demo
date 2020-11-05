@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.whitestein.lsps</groupId>
 		<artifactId>lsps</artifactId>
-		<version>3.6.1005-SNAPSHOT</version>
+		<version>LSPS_VERSION</version>
 	</parent>
 
 	<groupId>com.whitestein.lsps.app</groupId>
@@ -16,7 +16,7 @@
 	
 	
 	<properties>
-		<lsps.version>3.6.1005-SNAPSHOT</lsps.version>
+		<lsps.version>LSPS_VERSION</lsps.version>
 		<git.plugin.version>2.2.4</git.plugin.version>
 	</properties>
 	

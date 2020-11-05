@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.whitestein.lsps.default-app</groupId>
+		<groupId>com.whitestein.lsps.app</groupId>
 		<artifactId>lsps-app</artifactId>
 		<version>0.1-SNAPSHOT</version>
 	</parent>
@@ -54,7 +54,7 @@
 			<type>ejb</type>
 		</dependency>
 		<dependency>
-			<groupId>com.whitestein.lsps.default-app</groupId>
+			<groupId>com.whitestein.lsps.app</groupId>
 			<artifactId>lsps-app-ejb</artifactId>
 			<version>0.1-SNAPSHOT</version>
 			<type>ejb</type>
@@ -66,13 +66,13 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.whitestein.lsps.default-app</groupId>
+			<groupId>com.whitestein.lsps.app</groupId>
 			<artifactId>lsps-app-vaadin-war</artifactId>
 			<version>0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
 		<dependency>
-			<groupId>com.whitestein.lsps.default-app</groupId>
+			<groupId>com.whitestein.lsps.app</groupId>
 			<artifactId>lsps-app-vaadin</artifactId>
 			<version>0.1-SNAPSHOT</version>
 		</dependency>
@@ -120,13 +120,13 @@
 
 		<!-- Are used by docker image build therefore should be build before -->
 		<dependency>
-			<groupId>com.whitestein.lsps.default-app</groupId>
+			<groupId>com.whitestein.lsps.app</groupId>
 			<artifactId>lsps-app-db-migration</artifactId>
 			<version>0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.whitestein.lsps.default-app</groupId>
+			<groupId>com.whitestein.lsps.app</groupId>
 			<artifactId>lsps-app-model-exporter</artifactId>
 			<version>0.1-SNAPSHOT</version>
 			<exclusions>
@@ -165,7 +165,7 @@
 					<filtering>true</filtering>
 					<modules>
 						<ejbModule>
-							<groupId>com.whitestein.lsps.default-app</groupId>
+							<groupId>com.whitestein.lsps.app</groupId>
 							<artifactId>lsps-app-ejb</artifactId>
 							<bundleFileName>lsps-app-ejb.jar</bundleFileName>
 						</ejbModule>
@@ -210,7 +210,7 @@
 						</ejbModule>
 						
 						<webModule>
-							<groupId>com.whitestein.lsps.default-app</groupId>
+							<groupId>com.whitestein.lsps.app</groupId>
 							<artifactId>lsps-app-vaadin-war</artifactId>
 							<contextRoot>/lsps-application</contextRoot>
 							<bundleFileName>lsps-app-vaadin.war</bundleFileName>
@@ -293,7 +293,7 @@
 							<filtering>true</filtering>
 							<modules>
 								<ejbModule>
-									<groupId>com.whitestein.lsps.default-app</groupId>
+									<groupId>com.whitestein.lsps.app</groupId>
 									<artifactId>lsps-app-ejb</artifactId>
 									<bundleFileName>lsps-app-ejb.jar</bundleFileName>
 								</ejbModule>
@@ -338,7 +338,7 @@
 								</ejbModule>
 								
 								<webModule>
-									<groupId>com.whitestein.lsps.default-app</groupId>
+									<groupId>com.whitestein.lsps.app</groupId>
 									<artifactId>lsps-app-vaadin-war</artifactId>
 									<contextRoot>/lsps-application</contextRoot>
 									<bundleFileName>lsps-app-vaadin.war</bundleFileName>
@@ -416,7 +416,7 @@
 					<scope>provided</scope>
 				</dependency>
 				<dependency>
-					<groupId>com.whitestein.lsps.default-app</groupId>
+					<groupId>com.whitestein.lsps.app</groupId>
 					<artifactId>lsps-app-db-migration</artifactId>
 					<version>0.1-SNAPSHOT</version>
 					<classifier>full</classifier>
@@ -467,7 +467,7 @@
 											<classifier>full</classifier>
 										</artifactItem>
 										<artifactItem>
-											<groupId>com.whitestein.lsps.default-app</groupId>
+											<groupId>com.whitestein.lsps.app</groupId>
 											<artifactId>lsps-app-db-migration</artifactId>
 											<version>${project.version}</version>
 											<classifier>full</classifier>
