@@ -42,7 +42,6 @@ public class LspsUIComponentFactory extends UIComponentFactory_PureV8Impl {
 
 	@Override
 	protected UIComponent createTabbedLayout(UIComponentData componentData) {
-		// TODO Auto-generated method stub
 		return super.createTabbedLayout(componentData);
 	}
 }

@@ -389,4 +389,11 @@
 		<ejb-link>SettingManagementServiceBean</ejb-link>
 	</ejb-local-ref>
 	
+	<ejb-local-ref>
+		<ejb-ref-name>ejb/ApplicationRestartServiceLocal</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<local>com.whitestein.lsps.engine.ejb.ApplicationRestartServiceLocal</local>
+		<ejb-link>ApplicationRestartServiceBean</ejb-link>
+	</ejb-local-ref>
+	
 </web-app>

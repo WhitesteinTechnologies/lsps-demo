@@ -17,7 +17,7 @@
     <!-- Inherit default LSPS widget set -->
     <inherits name="com.whitestein.lsps.vaadin.widgets.WidgetSet" />
     <!-- inherit additional widget sets from additional vaadin components -->
-    <inherits name="com.whitestein.lsps.vaadin.widgets.WidgetSetV7" />
+    <inherits name="com.whitestein.lsps.vaadin.widgets.WidgetSet" />
 
 
 </module>

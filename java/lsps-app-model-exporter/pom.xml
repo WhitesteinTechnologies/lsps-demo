@@ -40,6 +40,15 @@
 
 	<build>
 		<plugins>
+			<!-- skip the deploy, artifact is not needed in maven repository -->
+	   		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
 			<!-- Model export: unpack stdlib and bam to output directory so that they can be exported -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

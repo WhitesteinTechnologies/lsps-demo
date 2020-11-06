@@ -40,6 +40,15 @@
 
 	<build>
 		<plugins>
+			<!-- skip the deploy, artifact is not needed in maven repository -->
+	   		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>

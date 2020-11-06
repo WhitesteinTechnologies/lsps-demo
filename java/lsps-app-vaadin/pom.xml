@@ -57,6 +57,10 @@
 			<artifactId>lsps-human-vaadin-v8</artifactId>
 			<version>${lsps.version}</version>
 		</dependency> -->		
+		<dependency>
+			<groupId>com.whitestein.lsps.human-processes</groupId>
+			<artifactId>lsps-human-vaadin-forms</artifactId>
+		</dependency>
 						
 	</dependencies>
 

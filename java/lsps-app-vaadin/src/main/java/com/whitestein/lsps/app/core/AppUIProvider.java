@@ -7,7 +7,7 @@ import com.vaadin.ui.UI;
 import com.whitestein.lsps.app.connectorsv7.DefaultLspsAppConnectorV7;
 import com.whitestein.lsps.human.app.core.LspsUI;
 import com.whitestein.lsps.human.app.core.LspsUIProvider;
-import com.whitestein.lsps.vaadin.LspsAppConnector;
+import com.whitestein.lsps.vaadin.LspsAppConnectorWithForms;
 import com.whitestein.lsps.vaadin.util.LspsUIBase;
 
 /**
@@ -65,7 +65,7 @@ public class AppUIProvider extends LspsUIProvider {
 		return result;
 	}
 
-	private LspsAppConnector createLspsAppConnector(LspsUI lspsUI) {
+	private LspsAppConnectorWithForms createLspsAppConnector(LspsUI lspsUI) {
 		/**
 		 * Uncomment to create application that does not use deprecated vaadin 7 features.
 		 */

@@ -615,7 +615,7 @@
 									<executable>docker</executable>
 									<arguments>
 										<argument>push</argument>
-										<argument>${docker.tag.prefix}/${project.parent.artifactId}:${project.version}</argument>
+										<argument>${docker.tag.prefix}/${project.parent.artifactId}:${project.version}-${docker.targetdb}</argument>
 									</arguments>
 								</configuration>
 							</execution>
