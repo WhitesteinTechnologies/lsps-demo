@@ -14,11 +14,30 @@
 	<packaging>pom</packaging>
 	<version>0.1-SNAPSHOT</version>
 	
-	
 	<properties>
 		<lsps.version>LSPS_VERSION</lsps.version>
 		<git.plugin.version>2.2.4</git.plugin.version>
 	</properties>
+
+	<repositories>
+		<!-- Define central explicitly to tell maven to search for artifacts 
+		first in central and then in aws (to keep request amount low) -->
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>https://repo.maven.apache.org/maven2</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>lsps-private-repo</id>
+			<url>http://pm1-nexus.dmz.whitestein.com:8081/content/groups/public</url>
+		</repository>
+		<repository>
+			<id>lsps-maven-repo</id>
+			<name>LSPS Maven Repository</name>
+			<url>https://lsps-maven-repo.s3.eu-central-1.amazonaws.com/LSPS_VERSION</url>
+		</repository>
+	</repositories>
 	
 	<profiles>
 		<profile>
