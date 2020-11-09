@@ -5,17 +5,17 @@
 	<parent>
 		<groupId>com.whitestein.lsps</groupId>
 		<artifactId>lsps</artifactId>
-		<version>LSPS_VERSION</version>
+		<version>3.6.1008-SNAPSHOT</version>
 	</parent>
 
 	<groupId>com.whitestein.lsps.app</groupId>
-	<artifactId>lsps-app-parent</artifactId>
+	<artifactId>lsps-simple-app-parent</artifactId>
 	<name>LSPS: Application BOM</name>
 	<packaging>pom</packaging>
 	<version>0.1-SNAPSHOT</version>
 	
 	<properties>
-		<lsps.version>LSPS_VERSION</lsps.version>
+		<lsps.version>3.6.1008-SNAPSHOT</lsps.version>
 		<git.plugin.version>2.2.4</git.plugin.version>
 	</properties>
 	
@@ -40,7 +40,7 @@
 		<repository>
 			<id>lsps-maven-repo</id>
 			<name>LSPS Maven Repository</name>
-			<url>https://lsps-maven-repo.s3.eu-central-1.amazonaws.com/LSPS_VERSION</url>
+			<url>https://lsps-maven-repo.s3.eu-central-1.amazonaws.com/3.6.1008-SNAPSHOT</url>
 		</repository>
 	</repositories>
 </project>
