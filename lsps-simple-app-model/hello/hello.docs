@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.document:Documents
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:com.whitestein.lsps.modeler.document="http:///com/whitestein/lsps/modeler/document.ecore"
+    xmi:id="_u_busCQuEeuriLD3lWqkHg"
+    newUI="true">
+  <docs
+      xmi:id="_vOKuQCQuEeuriLD3lWqkHg"
+      name="documentHello">
+    <title><![CDATA["Hello Document"]]></title>
+    <uIDefinition>new FormHello()</uIDefinition>
+    <accessRights>true</accessRights>
+  </docs>
+</com.whitestein.lsps.modeler.document:Documents>

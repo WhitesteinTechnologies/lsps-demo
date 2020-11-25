@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.whitestein.lsps.app</groupId>
+		<artifactId>lsps-simple-app</artifactId>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>lsps-simple-app-model</artifactId>
+	<name>LSPS: Application: Model</name>
+	<description>Living Systems Process Suite: Model</description>
+	<packaging>pom</packaging>
+
+	<properties>
+		<model.directory>hello</model.directory>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.whitestein.lsps.stdlib</groupId>
+			<artifactId>lsps-stdlib-modules</artifactId>
+			<version>${lsps.version}</version>
+			<classifier>zip</classifier>
+			<type>zip</type>
+		</dependency>
+		<dependency>
+			<groupId>com.whitestein.lsps.tools</groupId>
+			<artifactId>lsps-tools-export</artifactId>
+			<version>${lsps.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- skip the deploy, artifact is not needed in maven repository -->
+	   		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
+			<!-- Model export: unpack stdlib to output directory so that they can be packed with the model -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>unpack.common.lsps.plugins</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.whitestein.lsps.stdlib</groupId>
+									<artifactId>lsps-stdlib-modules</artifactId>
+									<classifier>zip</classifier>
+									<type>zip</type>
+									<outputDirectory>${project.build.directory}/unpackedStdlib</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<executions>
+					<!-- export module with all its dependencies -->
+					<execution>
+						<id>zip-model</id>
+						<phase>package</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>com.whitestein.lsps.export.ModelExporter</mainClass>
+							<arguments>
+								<argument>${project.basedir}</argument> <!-- Path to the model -->
+								<argument>${model.directory}</argument> <!-- Module name to export -->
+								<argument>${project.build.directory}/unpackedStdlib/</argument> <!-- Libraries to pack -->
+								<argument>${project.build.directory}/model-${project.version}.zip</argument> <!-- Output file -->
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>model.taget.clean</id>
+						<phase>package</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+						<configuration>
+							<!-- Don't delete whole target, just folder in filesets to prevent duplicate std lib error in the designer -->
+							<excludeDefaultDirectories>true</excludeDefaultDirectories>
+							<filesets>
+								<filesets>
+									<directory>${project.build.directory}/unpackedStdlib</directory>
+								</filesets>
+							</filesets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- generate correct .project file on eclipse:eclipse -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>eclipse</goal>
+						</goals>
+						<phase>install</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- https://issues.apache.org/jira/browse/MECLIPSE-94?focusedCommentId=14434719&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-14434719 -->
+					<eclipseProjectDir>..</eclipseProjectDir>
+					<buildcommands>
+						<buildcommand>com.whitestein.lsps.modeler.ui.gobpmnBuilder</buildcommand>
+					</buildcommands>
+					<projectnatures>
+						<projectnature>com.whitestein.lsps.modeler.ui.gobpmnNature</projectnature>
+					</projectnatures>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.form2:Form
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.form2="http:///com/whitestein/lsps/modeler/form2.ecore"
+    xmi:id="_KnSQ8CQuEeuriLD3lWqkHg"
+    name="FormHello">
+  <root
+      xsi:type="com.whitestein.lsps.modeler.form2:FLayout"
+      xmi:id="_LIdEUCQuEeuriLD3lWqkHg"
+      margin="true">
+    <components
+        xsi:type="com.whitestein.lsps.modeler.form2:FLabel"
+        xmi:id="_MzfCwCQuEeuriLD3lWqkHg">
+      <binding
+          xmi:id="_MzfCwSQuEeuriLD3lWqkHg"
+          type="VALUE">
+        <expression></expression>
+      </binding>
+      <caption><![CDATA["Hello " + getCurrentPerson().getPersonFullName() + "!"]]></caption>
+    </components>
+    <components
+        xsi:type="com.whitestein.lsps.modeler.form2:FButton"
+        xmi:id="_O-C10CQuEeuriLD3lWqkHg">
+      <caption><![CDATA["Submit"]]></caption>
+      <clickListener>{_-> Forms.submit() }</clickListener>
+    </components>
+  </root>
+</com.whitestein.lsps.modeler.form2:Form>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.whitestein.lsps.modeler.gbpmn:ProcessModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:com.whitestein.lsps.modeler.diagram="http:///com/whitestein/lsps/modeler/diagram.ecore"
+    xmlns:com.whitestein.lsps.modeler.gbpmn="http:///com/whitestein/lsps/modeler/gbpmn.ecore"
+    xmi:id="_7eamoCQoEeuriLD3lWqkHg"
+    name="Process"
+    formatVersion="1"
+    processType="BPMN_BASED">
+  <elements
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:NoneStartEvent"
+      xmi:id="_8NJU4CQoEeuriLD3lWqkHg"
+      sourceRelationships="__NIUECQoEeuriLD3lWqkHg"/>
+  <elements
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:Task"
+      xmi:id="__M_xMCQoEeuriLD3lWqkHg"
+      name="Say hello"
+      sourceRelationships="_CNtJICQpEeuriLD3lWqkHg"
+      targetRelationships="__NIUECQoEeuriLD3lWqkHg"
+      type="human::User">
+    <assignments
+        xmi:id="_DEJo8CQpEeuriLD3lWqkHg"
+        qualifier="START"/>
+    <assignments
+        xmi:id="_DEJo8SQpEeuriLD3lWqkHg"
+        qualifier="END"/>
+    <assignments
+        xmi:id="_DEJo8iQpEeuriLD3lWqkHg"
+        qualifier="ACCOMPLISH"/>
+    <measurements
+        xmi:id="_DEC7QCQpEeuriLD3lWqkHg"
+        qualifier="START"/>
+    <measurements
+        xmi:id="_DEC7QSQpEeuriLD3lWqkHg"
+        qualifier="END"/>
+    <measurements
+        xmi:id="_DEC7QiQpEeuriLD3lWqkHg"
+        qualifier="ACCOMPLISH"/>
+    <parametersExpression><![CDATA[title /* String */ -> "Hello Todo"
+,
+performers /* Set<Performer> */ -> { anyPerformer() }
+,
+uiDefinition /* UIDefinition */ -> new FormHello()
+,
+escalationTimeout /* Duration */ ->
+,
+issueAction /* {Todo:void} */ ->
+,
+navigation /* {Set<Todo>:Navigation} */ ->
+]]></parametersExpression>
+  </elements>
+  <elements
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:TerminateEndEvent"
+      xmi:id="_CNr7ACQpEeuriLD3lWqkHg"
+      targetRelationships="_CNtJICQpEeuriLD3lWqkHg"/>
+  <diagrams
+      xmi:id="_7eamoSQoEeuriLD3lWqkHg"
+      name="Main">
+    <children
+        xmi:id="_8NM_QCQoEeuriLD3lWqkHg"
+        element="_8NJU4CQoEeuriLD3lWqkHg"
+        sourceEdges="__NI7ICQoEeuriLD3lWqkHg">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_8NM_QSQoEeuriLD3lWqkHg"
+          x="57"
+          y="52"
+          width="-1"
+          height="-1"/>
+    </children>
+    <children
+        xmi:id="__M_xMSQoEeuriLD3lWqkHg"
+        element="__M_xMCQoEeuriLD3lWqkHg"
+        sourceEdges="_CNtJISQpEeuriLD3lWqkHg"
+        targetEdges="__NI7ICQoEeuriLD3lWqkHg">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="__M_xMiQoEeuriLD3lWqkHg"
+          x="118"
+          y="14"
+          width="-1"
+          height="-1"/>
+    </children>
+    <children
+        xmi:id="_CNr7ASQpEeuriLD3lWqkHg"
+        element="_CNr7ACQpEeuriLD3lWqkHg"
+        targetEdges="_CNtJISQpEeuriLD3lWqkHg">
+      <layoutConstraint
+          xsi:type="com.whitestein.lsps.modeler.diagram:Bounds"
+          xmi:id="_CNr7AiQpEeuriLD3lWqkHg"
+          x="314"
+          y="52"
+          width="-1"
+          height="-1"/>
+    </children>
+    <connections
+        xmi:id="__NI7ICQoEeuriLD3lWqkHg"
+        element="__NIUECQoEeuriLD3lWqkHg"
+        source="_8NM_QCQoEeuriLD3lWqkHg"
+        target="__M_xMSQoEeuriLD3lWqkHg">
+      <children
+          xmi:id="__NI7ISQoEeuriLD3lWqkHg"/>
+    </connections>
+    <connections
+        xmi:id="_CNtJISQpEeuriLD3lWqkHg"
+        element="_CNtJICQpEeuriLD3lWqkHg"
+        source="__M_xMSQoEeuriLD3lWqkHg"
+        target="_CNr7ASQpEeuriLD3lWqkHg">
+      <children
+          xmi:id="_CNtJIiQpEeuriLD3lWqkHg"/>
+    </connections>
+  </diagrams>
+  <relationships
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:PlanRelationship"
+      xmi:id="__NIUECQoEeuriLD3lWqkHg"
+      source="_8NJU4CQoEeuriLD3lWqkHg"
+      target="__M_xMCQoEeuriLD3lWqkHg"/>
+  <relationships
+      xsi:type="com.whitestein.lsps.modeler.gbpmn:PlanRelationship"
+      xmi:id="_CNtJICQpEeuriLD3lWqkHg"
+      source="__M_xMCQoEeuriLD3lWqkHg"
+      target="_CNr7ACQpEeuriLD3lWqkHg"/>
+</com.whitestein.lsps.modeler.gbpmn:ProcessModel>
